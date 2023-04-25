@@ -4,7 +4,7 @@ const AuthPage = (props) => {
   const onSubmit = (e) => {
     e.preventDefault();
     const { value } = e.target[0];
-axios.post('https://chatify-31w0.onrender.com/authenticate', { username: value })
+axios.post('https://chatify-app.onrender.com/authenticate', { username: value })
   .then((r) => props.onAuth({...r.data, secret: value}))
   .catch((e) => {
     console.log("Auth Error", e.message); // error message
